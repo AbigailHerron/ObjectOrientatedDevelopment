@@ -3,7 +3,7 @@
  ID: S00200536
  Year: 2
  Date: 11/01/21
- GitHub Repository Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Lab1/Lab1/Band.cs
+ GitHub Repository Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Lab1/Band.cs
  
  Description:
  Properties:
