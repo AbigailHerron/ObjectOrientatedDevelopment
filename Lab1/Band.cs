@@ -7,7 +7,7 @@
  
  Description: A blueprint for a musical Band object
  Properties: BandName, YearFormed, Members
- Methods: ToString() (override)
+ Methods: ToString() (override), CompareTo()
  Constructors: Default, All
  ##########################################################################################################################*/
 using System;
@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace Lab1
 {
-    public class Band
+    public class Band : IComparable
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
         public string BandName { get; set; }
@@ -55,6 +55,16 @@ namespace Lab1
         {
             return this.BandName;
         }// end ToString()
+
+
+        /*Method: CompareTo()
+                  1) Implements the CompareTo() method from the IComparable abstract class
+                  2) Removes value to the Balance property */
+        public int CompareTo(object obj)
+        {
+            Band thatBand = obj as Band;
+            return this.BandName.CompareTo(thatBand.BandName);
+        }// end CompareTo()
 
     }// end Band class
 }// end Namespace
