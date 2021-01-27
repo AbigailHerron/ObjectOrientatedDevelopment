@@ -7,7 +7,7 @@
  
  Description: A blueprint for a musical Band object
  Properties: BandName, YearFormed, Members
- Methods:
+ Methods: ToString() (override)
  Constructors: Default, All
  ##########################################################################################################################*/
 using System;
@@ -24,6 +24,7 @@ namespace Lab1
         public string BandName { get; set; }
         public int YearFormed { get; set; }
         public string Members { get; set; }
+
 
         /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
         /*Constructor: Default
@@ -45,6 +46,15 @@ namespace Lab1
             this.Members = members;
         }// end All Constructor
 
+
+        /*METHODS ---------------------------------------------------------------------------------------------------------*/
+        /*Method: ToString()
+                  1) Overrides original ToString() method
+                  2) Removes value to the Balance property */
+        public override string ToString()
+        {
+            return this.BandName;
+        }// end ToString()
 
     }// end Band class
 }// end Namespace
