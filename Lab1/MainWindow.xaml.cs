@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*###########################################################################################################################
+ Name: Abigail Herron
+ ID: S00200536
+ Year: 2
+ Date: 11/01/21
+ GitHub Repository Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Lab1/MainWindow.xaml.cs
+ 
+ Description:
+ Variables:
+ Methods:
+ ##########################################################################################################################*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +34,10 @@ namespace Lab1
         public MainWindow()
         {
             InitializeComponent();
-        }
-    }
-}
+        }// end MainWindow
+
+
+
+
+    }// end MainWindow Class
+}// end Namespace
