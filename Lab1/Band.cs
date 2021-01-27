@@ -20,5 +20,11 @@ namespace Lab1
 {
     class Band
     {
-    }
-}
+        /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
+        public string BandName { get; set; }
+        public int YearFormed { get; set; }
+        public string[] Members { get; set; }
+
+
+    }// end Band class
+}// end Namespace
