@@ -5,10 +5,10 @@
  Date: 11/01/21
  GitHub Repository Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Lab1/Band.cs
  
- Description:
- Properties:
+ Description: A blueprint for a musical Band object
+ Properties: BandName, YearFormed, Members
  Methods:
- Constructors: Default
+ Constructors: Default, All
  ##########################################################################################################################*/
 using System;
 using System.Collections.Generic;
@@ -18,12 +18,32 @@ using System.Threading.Tasks;
 
 namespace Lab1
 {
-    class Band
+    public class Band
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
         public string BandName { get; set; }
         public int YearFormed { get; set; }
-        public string[] Members { get; set; }
+        public string Members { get; set; }
+
+        /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
+        /*Constructor: Default
+                  1) Chains to All Constructor
+                  2) Passes down the default values */
+        public Band() : this("Templates", 2021, "Me, Myself, I")
+        {
+        }// end Default Constructor
+
+
+        /*Constructor: All
+                  1) Takes in two string values and an int value
+                  2) Creates a Band object with the BandName name, YearFormed year
+                     and Members members */
+        public Band(string name, int year, string members)
+        {
+            this.BandName = name;
+            this.YearFormed = year;
+            this.Members = members;
+        }// end All Constructor
 
 
     }// end Band class
