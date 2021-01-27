@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="tblkTitle" HorizontalAlignment="Left" Margin="74,26,0,0" TextWrapping="Wrap" Text="Bands" VerticalAlignment="Top" FontSize="28"/>
         <TextBlock x:Name="tblkGenre" HorizontalAlignment="Left" Margin="61,84,0,0" TextWrapping="Wrap" Text="Genre" VerticalAlignment="Top" FontSize="14"/>
-        <ListBox x:Name="lbxBands" HorizontalAlignment="Left" Height="240" Margin="61,128,0,0" VerticalAlignment="Top" Width="229"/>
+        <ListBox x:Name="lbxBands" HorizontalAlignment="Left" Height="240" Margin="61,128,0,0" VerticalAlignment="Top" Width="229" IsSynchronizedWithCurrentItem="False"/>
         <TextBlock x:Name="tblkTitleBandInfo" HorizontalAlignment="Left" Margin="386,26,0,0" TextWrapping="Wrap" Text="Band Information" VerticalAlignment="Top" FontSize="28"/>
         <TextBlock x:Name="tblkInfoBand" HorizontalAlignment="Left" Margin="386,113,0,0" TextWrapping="Wrap" Text="Band Info: " VerticalAlignment="Top" Height="90" Width="216" FontSize="14"/>
         <TextBlock x:Name="tblkTitleAlbums" HorizontalAlignment="Left" Margin="386,212,0,0" TextWrapping="Wrap" Text="Albums" VerticalAlignment="Top" FontSize="28"/>
