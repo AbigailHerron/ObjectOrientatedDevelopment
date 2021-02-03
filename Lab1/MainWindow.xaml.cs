@@ -42,6 +42,11 @@ namespace Lab1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            // populating combobox
+            string[] genres = {"All", "Rock", "Pop", "Indie" };
+            cmbxGenre.ItemsSource = genres;
+
+
             // creating band objects
             PopBand b1 = new PopBand();
             PopBand b2 = new PopBand("ABBA", 1972, "Agnetha Fältskog, Björn Ulvaeus, Benny Andersson, Anni-Frid Lyngstad");
@@ -52,27 +57,21 @@ namespace Lab1
 
             // creating random object
             Random r = new Random();
-
             // creating album objects
             Album a1 = new Album();
             Album a2 = new Album("Now That's What I Call Music", r.Next(1960, 2020), r.Next(1000000, 10000000));
-
                 // ABBA
             Album a3 = new Album("Waterloo", r.Next(1960, 2020), r.Next(1000000, 10000000));
             Album a4 = new Album("Arrival", r.Next(1960, 2020), r.Next(1000000, 10000000));
-
                 // Heart
             Album a5 = new Album("Little Queen", r.Next(1960, 2020), r.Next(1000000, 10000000));
             Album a6 = new Album("Brigade", r.Next(1960, 2020), r.Next(1000000, 10000000));
-
                 // Kiss
             Album a7 = new Album("Psycho Circus", r.Next(1960, 2020), r.Next(1000000, 10000000));
             Album a8 = new Album("Alive II", r.Next(1960, 2020), r.Next(1000000, 10000000));
-
                 // In This Moment
             Album a9 = new Album("Black Widow", r.Next(1960, 2020), r.Next(1000000, 10000000));
             Album a10 = new Album("Beautiful Tragedy", r.Next(1960, 2020), r.Next(1000000, 10000000));
-
                 // Boppins
             Album a11 = new Album("I Don't Know How I Got Here", r.Next(1960, 2020), r.Next(1000000, 10000000));
             Album a12 = new Album("Up Is Not Jump", r.Next(1960, 2020), r.Next(1000000, 10000000));
@@ -133,7 +132,61 @@ namespace Lab1
                 tblkInfoBand.Text = string.Format($"Formed in {selectedBand.YearFormed}" +
                                      $"/nMembers: {selectedBand.Members}");
             }// end if block
-        }// end lbxBands_SelectionChanged()
+        }// end cmbxGenre_SelectionChanged()
+
+
+
+
+        /*Method: lbxBands_SelectionChanged
+                  1) Executes when an item in the cmbxGenre combo box is selected
+                  2) Checks what item from the combo box is selected
+                  3) Creates a filtered list of Band objects
+                  4) Displays the filtered objects in the list box lbxBands */
+        private void cmbxGenre_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedG = cmbxGenre.SelectedItem as string;
+            List<Band> filteredL = new List<Band>();
+
+            switch(selectedG)
+            {
+                case "All":
+                    lbxBands.ItemsSource = bands;
+                    break;
+                case "Rock":
+                    foreach(Band band in bands)
+                    {
+                        if(band is RockBand)
+                        {
+                            filteredL.Add(band);
+                        }
+                    }
+                    lbxBands.ItemsSource = filteredL;
+                    break;
+                case "Pop":
+                    foreach (Band band in bands)
+                    {
+                        if (band is PopBand)
+                        {
+                            filteredL.Add(band);
+                        }
+                    }
+                    lbxBands.ItemsSource = filteredL;
+                    break;
+                case "Indie":
+                    foreach (Band band in bands)
+                    {
+                        if (band is IndieBand)
+                        {
+                            filteredL.Add(band);
+                        }
+                    }
+                    lbxBands.ItemsSource = filteredL;
+                    break;
+
+            }// end switch block
+
+        }// end cmbxGenre_SelectionChanged()
+
 
     }// end MainWindow Class
 }// end Namespace
