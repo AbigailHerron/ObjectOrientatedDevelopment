@@ -22,7 +22,7 @@ namespace Lab1
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
         public string AlbumName { get; set; }
-        public int YearFormed { get; set; }
+        public DateTime YearFormed { get; set; }
         public int Sales { get; set; }
 
         /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
@@ -38,7 +38,7 @@ namespace Lab1
                   1) Takes in a string value and two int values
                   2) Creates an Album object with the AlbumName name, YearFormed year
                      and Sales sales */
-        public Album(string name, int year, int sales)
+        public Album(string name, DateTime year, int sales)
         {
             this.AlbumName = name;
             this.YearFormed = year;
