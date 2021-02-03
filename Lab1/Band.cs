@@ -44,7 +44,7 @@ namespace Lab1
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
         public string BandName { get; set; }
-        public int YearFormed { get; set; }
+        public DateTime YearFormed { get; set; }
         public string Members { get; set; }
         public List<Album> AlbumList { get; set; }
 
@@ -62,7 +62,7 @@ namespace Lab1
                   1) Takes in two string values and an int value
                   2) Creates a RockBand object with the BandName name, YearFormed year
                      and Members members */
-        public Band(string name, int year, string members)
+        public Band(string name, DateTime year, string members)
         {
             this.BandName = name;
             this.YearFormed = year;
@@ -107,7 +107,7 @@ namespace Lab1
         /*Constructor: All
                   1) Takes in two string values and an int value
                   2) Passes these values to the Band All Constructor */
-        public RockBand(string name, int year, string members) : base(name, year, members)
+        public RockBand(string name, DateTime year, string members) : base(name, year, members)
         {
         }// end All Constructor
 
@@ -137,7 +137,7 @@ namespace Lab1
         /*Constructor: All
                   1) Takes in two string values and an int value
                   2) Passes these values to the Band All Constructor */
-        public PopBand(string name, int year, string members) : base(name, year, members)
+        public PopBand(string name, DateTime year, string members) : base(name, year, members)
         {
         }// end All Constructor
 
@@ -165,7 +165,7 @@ namespace Lab1
         /*Constructor: All
                   1) Takes in two string values and an int value
                   2) Passes these values to the Band All Constructor */
-        public IndieBand(string name, int year, string members) : base(name, year, members)
+        public IndieBand(string name, DateTime year, string members) : base(name, year, members)
         {
         }// end All Constructor
 
