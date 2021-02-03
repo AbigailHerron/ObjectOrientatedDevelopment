@@ -20,7 +20,7 @@
         <TextBlock x:Name="tblkTitleAlbums" HorizontalAlignment="Left" Margin="335,212,0,0" TextWrapping="Wrap" Text="Albums" VerticalAlignment="Top" FontSize="28"/>
         <ListBox x:Name="lbxAlbums" HorizontalAlignment="Left" Height="102" Margin="335,254,0,0" VerticalAlignment="Top" Width="417" Grid.ColumnSpan="3"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="33,372,0,0" VerticalAlignment="Top" Width="106" Height="27" FontSize="14" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <ComboBox x:Name="cmbxGenre" HorizontalAlignment="Left" Margin="137,81,0,0" VerticalAlignment="Top" Width="153"/>
+        <ComboBox x:Name="cmbxGenre" HorizontalAlignment="Left" Margin="137,81,0,0" VerticalAlignment="Top" Width="153" SelectionChanged="cmbxGenre_SelectionChanged"/>
 
     </Grid>
 </Window>
