@@ -5,10 +5,31 @@
  Date: 11/01/21
  GitHub Repository Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Lab1/Band.cs
  
- Description: A blueprint for a musical Band object
+ Description: Blueprints for a Band object.
+              An abstract Band class with RockBand, PopBand and IndieBand subclasses
+
+ Class: Band (abstract)
  Properties: BandName, YearFormed, Members
  Methods: ToString() (override), CompareTo()
  Constructors: Default, All
+
+         Class: RockBand (sub-class)
+         Additional Properties: 
+         Additional Methods: 
+         Altered Methods: ToString()
+         Constructors: Default
+
+         Class: PopBand (sub-class)
+         Additional Properties: 
+         Additional Methods: 
+         Altered Methods: ToString()
+         Constructors: Default
+
+         Class: IndieBand (sub-class)
+         Additional Properties: 
+         Additional Methods: 
+         Altered Methods: ToString()
+         Constructors: Default
  ##########################################################################################################################*/
 using System;
 using System.Collections.Generic;
@@ -18,7 +39,8 @@ using System.Threading.Tasks;
 
 namespace Lab1
 {
-    public class Band : IComparable
+    /*==================================================== BAND CLASS =====================================================*/
+    public abstract class Band : IComparable
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
         public string BandName { get; set; }
@@ -67,4 +89,48 @@ namespace Lab1
         }// end CompareTo()
 
     }// end Band class
+
+
+
+
+    /*================================================= ROCK-BAND CLASS ===================================================*/
+    public class RockBand : Band
+    {
+
+
+        /*METHODS ---------------------------------------------------------------------------------------------------------*/
+        /*Method: ToString()
+                  1) Adds ' Rock Band' to the end of parent class' ToString() */
+        public override string ToString()
+        {
+            return base.ToString() + " Rock Band";
+        }// end ToString()
+    }// end RockBand class
+
+
+    /*================================================== POP-BAND CLASS ====================================================*/
+    public class PopBand : Band
+    {
+        /*Method: ToString()
+                  1) Adds ' Pop Band' to the end of parent class' ToString() */
+        /*METHODS ---------------------------------------------------------------------------------------------------------*/
+        public override string ToString()
+        {
+            return base.ToString() + " Pop Band";
+        }// end ToString()
+    }// end PopBand class
+
+
+    /*================================================= INDIE-BAND CLASS ====================================================*/
+    public class IndieBand : Band
+    {
+        /*METHODS ---------------------------------------------------------------------------------------------------------*/
+        /*Method: ToString()
+                  1) Adds ' Indie Band' to the end of parent class' ToString() */
+        public override string ToString()
+        {
+            return base.ToString() + " Indie Band";
+        }// end ToString()
+    }// end IndieBand class
+
 }// end Namespace
