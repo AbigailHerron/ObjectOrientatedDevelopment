@@ -9,7 +9,7 @@
               An abstract Band class with RockBand, PopBand and IndieBand subclasses
 
  Class: Band (abstract)
- Properties: BandName, YearFormed, Members
+ Properties: BandName, YearFormed, Members, AlbumList
  Methods: ToString() (override), CompareTo()
  Constructors: Default, All
 
@@ -17,19 +17,19 @@
          Additional Properties: 
          Additional Methods: 
          Altered Methods: ToString()
-         Constructors: Default
+         Constructors: Default, All
 
          Class: PopBand (sub-class)
          Additional Properties: 
          Additional Methods: 
          Altered Methods: ToString()
-         Constructors: Default
+         Constructors: Default, All
 
          Class: IndieBand (sub-class)
          Additional Properties: 
          Additional Methods: 
          Altered Methods: ToString()
-         Constructors: Default
+         Constructors: Default, All
  ##########################################################################################################################*/
 using System;
 using System.Collections.Generic;
@@ -46,6 +46,7 @@ namespace Lab1
         public string BandName { get; set; }
         public int YearFormed { get; set; }
         public string Members { get; set; }
+        public List<Album> AlbumList { get; set; }
 
 
         /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
@@ -59,20 +60,20 @@ namespace Lab1
 
         /*Constructor: All
                   1) Takes in two string values and an int value
-                  2) Creates a Band object with the BandName name, YearFormed year
+                  2) Creates a RockBand object with the BandName name, YearFormed year
                      and Members members */
         public Band(string name, int year, string members)
         {
             this.BandName = name;
             this.YearFormed = year;
             this.Members = members;
-        }// end All Constructor
 
+            this.AlbumList = new List<Album>();
+        }// end All Constructor
 
         /*METHODS ---------------------------------------------------------------------------------------------------------*/
         /*Method: ToString()
-                  1) Overrides original ToString() method
-                  2) Removes value to the Balance property */
+                  1) Overrides original ToString() method */
         public override string ToString()
         {
             return this.BandName;
@@ -80,8 +81,7 @@ namespace Lab1
 
 
         /*Method: CompareTo()
-                  1) Implements the CompareTo() method from the IComparable abstract class
-                  2) Removes value to the Balance property */
+                  1) Implements the CompareTo() method from the IComparable abstract class */
         public int CompareTo(object obj)
         {
             Band thatBand = obj as Band;
@@ -96,6 +96,21 @@ namespace Lab1
     /*================================================= ROCK-BAND CLASS ===================================================*/
     public class RockBand : Band
     {
+        /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
+        /*Constructor: Default
+                  1) Chains to the Band Default Constructor */
+        public RockBand() : base()
+        {
+        }// end Default Constructor
+
+
+        /*Constructor: All
+                  1) Takes in two string values and an int value
+                  2) Passes these values to the Band All Constructor */
+        public RockBand(string name, int year, string members) : base(name, year, members)
+        {
+        }// end All Constructor
+
 
 
         /*METHODS ---------------------------------------------------------------------------------------------------------*/
@@ -103,7 +118,7 @@ namespace Lab1
                   1) Adds ' Rock Band' to the end of parent class' ToString() */
         public override string ToString()
         {
-            return base.ToString() + " Rock Band";
+            return base.ToString() + " - Rock Band";
         }// end ToString()
     }// end RockBand class
 
@@ -111,12 +126,27 @@ namespace Lab1
     /*================================================== POP-BAND CLASS ====================================================*/
     public class PopBand : Band
     {
+        /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
+        /*Constructor: Default
+                  1) Chains to the Band Default Constructor */
+        public PopBand() : base()
+        {
+        }// end Default Constructor
+
+
+        /*Constructor: All
+                  1) Takes in two string values and an int value
+                  2) Passes these values to the Band All Constructor */
+        public PopBand(string name, int year, string members) : base(name, year, members)
+        {
+        }// end All Constructor
+
         /*Method: ToString()
                   1) Adds ' Pop Band' to the end of parent class' ToString() */
         /*METHODS ---------------------------------------------------------------------------------------------------------*/
         public override string ToString()
         {
-            return base.ToString() + " Pop Band";
+            return base.ToString() + " - Pop Band";
         }// end ToString()
     }// end PopBand class
 
@@ -124,12 +154,27 @@ namespace Lab1
     /*================================================= INDIE-BAND CLASS ====================================================*/
     public class IndieBand : Band
     {
+        /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
+        /*Constructor: Default
+                  1) Chains to the Band Default Constructor */
+        public IndieBand() : base()
+        {
+        }// end Default Constructor
+
+
+        /*Constructor: All
+                  1) Takes in two string values and an int value
+                  2) Passes these values to the Band All Constructor */
+        public IndieBand(string name, int year, string members) : base(name, year, members)
+        {
+        }// end All Constructor
+
         /*METHODS ---------------------------------------------------------------------------------------------------------*/
         /*Method: ToString()
                   1) Adds ' Indie Band' to the end of parent class' ToString() */
         public override string ToString()
         {
-            return base.ToString() + " Indie Band";
+            return base.ToString() + " - Indie Band";
         }// end ToString()
     }// end IndieBand class
 
