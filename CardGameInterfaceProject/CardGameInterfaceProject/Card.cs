@@ -1,15 +1,15 @@
-﻿/*###########################################################################################################################
+﻿/*####################################################################################################################################################
  Name: Abigail Herron
  ID: S00200536
  Year: 2
- Date: 11/01/21
- GitHub Link: 
+ Date: 11/02/21
+ GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/CardGameInterfaceProject/CardGameInterfaceProject/Card.cs
  
- Description:
- Properties:
- Methods:
+ Description: A blueprint for a Card object
+ Properties: Rank, Suit, Point
+ Methods: ToString(override) - for testing purposes
  Constructors: Default
- ##########################################################################################################################*/
+ ###################################################################################################################################################*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
