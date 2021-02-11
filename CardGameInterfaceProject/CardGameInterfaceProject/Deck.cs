@@ -98,11 +98,14 @@ namespace CardGameInterfaceProject
     public class TarotDeck : Deck
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
-        public string[] majorArcana = new string[] {"Fool", "Magician", "High Priestess", "Empress", "Emperor", "Hierophant", "Lovers",
-                                              "Chariot", "Justice", "Hermit", "Wheel of Fortune", "Strength", "Hanged Man", "Death",
-                                              "Temperance", "Devil", "Tower", "Star", "Moon", "Sun", "Judgement", "World"};
+        public string[] majorArcana = new string[] {"Fool", "Magician", "High Priestess", "Empress", "Emperor",
+                                                    "Hierophant", "Lovers","Chariot", "Justice", "Hermit",
+                                                    "Wheel of Fortune", "Strength", "Hanged Man", "Death", "Temperance",
+                                                    "Devil", "Tower", "Star", "Moon", "Sun", "Judgement", "World"};
+
         public string[] minorSuits = new string[] {"wands", "cups", "swords", "pentacles"};
-        public string[] minorRanks = new string[] {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Knave", "Knight", "Queen", "King"};
+        public string[] minorRanks = new string[] {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Knave",
+                                                   "Knight", "Queen", "King"};
 
         /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
         /*Constructor: Default
