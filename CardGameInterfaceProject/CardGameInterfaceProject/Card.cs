@@ -6,7 +6,7 @@
  GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/CardGameInterfaceProject/CardGameInterfaceProject/Card.cs
  
  Description: A blueprint for a Card object
- Properties: Rank, Suit, Point
+ Properties: Rank, Suit, Point, Position
  Methods: ToString(override) - for testing purposes
  Constructors: Default
  ###################################################################################################################################################*/
@@ -23,7 +23,10 @@ namespace CardGameInterfaceProject
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
         public string Rank { get; set; }
         public string Suit { get; set; }
-        public int Point { get; set; }
+        public int Point { get; set; }        
+        public bool Position { get; set; }  /* | Note: Position is relavant for the TarotDeck as the card looks          |
+                                               |       differentupside-down than upright. The PlayingDeck cards          |
+                                               |       look the same either way, so it won't be referenced for that deck | */
 
         /*METHODS ---------------------------------------------------------------------------------------------------------*/
         /*Method: ToString()
