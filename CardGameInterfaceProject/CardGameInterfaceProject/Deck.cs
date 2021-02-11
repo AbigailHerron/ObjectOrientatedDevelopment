@@ -30,6 +30,8 @@ using System.Threading.Tasks;
 
 namespace CardGameInterfaceProject
 {
+
+    /*====================================================DECK CLASS=======================================================*/
     public abstract class Deck
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
@@ -39,7 +41,7 @@ namespace CardGameInterfaceProject
         /*Method: Shuffle
                   1) To be executed after CreateDeck has run
                   2) Re-orders the card objects in the list Pack */
-        public void Shuffle()
+        public virtual void Shuffle()
         {
             Random order = new Random();
             Card temp = new Card();
@@ -60,7 +62,7 @@ namespace CardGameInterfaceProject
         }// end Shuffle()
     }// end Deck abstract class
 
-
+    /*================================================PLAYING-DECK CLASS===================================================*/
     public class PlayingDeck : Deck
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
@@ -95,6 +97,7 @@ namespace CardGameInterfaceProject
         }// end Default constructor
     }// end PlayingDeck sub-class
 
+    /*=================================================TAROT-DECK CLASS====================================================*/
     public class TarotDeck : Deck
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
@@ -146,6 +149,25 @@ namespace CardGameInterfaceProject
             }// end nested for block
         }// end Default constructor
 
+        /*METHODS ---------------------------------------------------------------------------------------------------------*/
+        /*Method: Shuffle(override)
+                  1) Takes the Shuffle() method from Deck class
+                  2) Randomly changes the Position of each card ('flipping' random cards) 
+                  3) Changes the Point value of any 'flipped' cards to a negative */
+        public override void Shuffle()
+        {
+            base.Shuffle(); // re-ordering the deck as before
+            Random flip = new Random();
 
+            // each card in the Pack list has a random chance of being 'flipped'
+            foreach(Card c in Pack)
+            {
+                if (flip.Next(1) != 0) // flip can either be 0 or 1
+                {
+                    c.Position = false; // make the card upside-down, essentially
+                    c.Point = c.Point - (2 * c.Point);
+                }
+            }// end loop
+        }// end Shuffle()
     }// end TarotDeck sub-class
 }// end Namespace
