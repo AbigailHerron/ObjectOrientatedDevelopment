@@ -3,7 +3,7 @@
  ID: S00200536
  Year: 2
  Date: 11/02/21
- GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/CardGameInterfaceProject/CardGameInterfaceProject/Player.cs
+ GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/CardGameInterfaceProject/CardGameInterfaceProject/Stats.cs
  
  Description: A blueprint for a Player's Statistics Record object
  Properties: Wins, Losses, Draws
@@ -20,5 +20,9 @@ namespace CardGameInterfaceProject
 {
     public class Stats
     {
+        /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
+        public int Wins { get; set; }
+        public int Losses { get; set; }
+        public int Draws { get; set; }
     }// end Stats class
 }// end Namespace
