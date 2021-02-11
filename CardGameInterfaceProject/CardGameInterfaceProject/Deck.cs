@@ -7,18 +7,18 @@
  
  Description: An abstract class (Deck) and all related Sub-Classes (PlayingDeck, TarotDeck) as follows:
  --------------------------------------------------------------------
-     Class: Deck (abstract) -- Note: May change this to a Parent class later
+     Class: Deck (abstract) -- Note: May change this a normal class later
      Properties: Deck, SpecialCards
      Methods: Shuffle
 
              Sub-Class: PlayingDeck
-             Additional Properties: --
+             Additional Properties: Suits, Ranks
              Additional Methods: ToString(override)
              Constructors: Default
 
              Sub-Class: TarotDeck
-             Additional Properties: --
-             Additional Methods: ToString(override)
+             Additional Properties: MajorArcana, MinorSuits, MinorRanks
+             Additional Methods: ToString(override), Shuffle(override)
              Constructors: Default
  --------------------------------------------------------------------
  ###################################################################################################################################################*/
@@ -34,10 +34,8 @@ namespace CardGameInterfaceProject
     {
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
         public List<Card> Pack { get; set; }
-        public string[] SpecialCards { get; set; }
 
         /*METHODS ---------------------------------------------------------------------------------------------------------*/
-
         /*Method: Shuffle
                   1) To be executed after CreateDeck has run
                   2) Re-orders the card objects in the list Pack */
@@ -60,7 +58,91 @@ namespace CardGameInterfaceProject
                 this.Pack[cardIndex] = temp; // dealing with duplicates
             }// end for block
         }// end Shuffle()
-
-
     }// end Deck abstract class
+
+
+    public class PlayingDeck : Deck
+    {
+        /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
+        public string[] suits = new string[] {"spades", "diamonds" ,"clubs" ,"hearts"};
+        public string[] ranks = new string[] {"Ace", "2","3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+
+        /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
+        /*Constructor: Default
+                       1) Creates a default, unshuffled PlayingDeck object
+                       2) Loops through suits and ranks arrays to create 52 cards, and places them
+                          in the property Pack */
+        public PlayingDeck()
+        {
+            this.Pack = new List<Card>(); // initialising List to avoid problems
+            for (int i = 0; i < suits.Length; i++)
+            {
+                for (int j = 0; j < ranks.Length; j++)
+                {
+                    Card c = new Card();
+                    c.Suit = suits[i];
+                    c.Rank = ranks[j];
+
+                    // assigning the default point value for each card
+                    if (j <= 8)
+                        c.Point = j + 1; // the point value for ace is set to 1 at this time
+                    else
+                        c.Point = 10;  // cards 10 to King will be worth 10 points
+
+                    Pack.Add(c); // adding new card to deck
+                }
+            }// end nested for block
+        }// end Default constructor
+    }// end PlayingDeck sub-class
+
+    public class TarotDeck : Deck
+    {
+        /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
+        public string[] majorArcana = new string[] {"Fool", "Magician", "High Priestess", "Empress", "Emperor", "Hierophant", "Lovers",
+                                              "Chariot", "Justice", "Hermit", "Wheel of Fortune", "Strength", "Hanged Man", "Death",
+                                              "Temperance", "Devil", "Tower", "Star", "Moon", "Sun", "Judgement", "World"};
+        public string[] minorSuits = new string[] {"wands", "cups", "swords", "pentacles"};
+        public string[] minorRanks = new string[] {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Knave", "Knight", "Queen", "King"};
+
+        /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
+        /*Constructor: Default
+                       1) Creates a default, unshuffled TarotDeck object
+                       2) Loops through majorArcana, minorSuits and minorRanks arrays to create 78 cards, and places them
+                          in the property Pack */
+        public TarotDeck()
+        {
+            this.Pack = new List<Card>(); // initialising Pack first to avoid problems
+
+            // looping through all major cards and adding them to the Pack list
+            for(int i = 0; i < majorArcana.Length; i++)
+            {
+                Card c = new Card();
+                c.Suit = "major";
+                c.Rank = majorArcana[i];
+
+                    // Note: from Ace to King in minor is 1 - 14, should start with Fool at 15
+                c.Point = i + 15;
+                c.Position = true; // this just means the card was pulled upright
+                Pack.Add(c); // adding new card to deck
+            }
+
+            // looping through all minor cards and adding them to the Pack list
+            for (int i = 0; i < minorSuits.Length; i++)
+            {
+                for (int j = 0; j < minorRanks.Length; j++)
+                {
+                    Card c = new Card();
+                    c.Suit = minorSuits[i];
+                    c.Rank = minorRanks[j];
+
+                    // assigning the default point value for each card
+                    c.Point = j + 1; // start with Ace and make it worth 1
+                    c.Position = true;
+                    Pack.Add(c); // adding new card to deck
+                }
+            }// end nested for block
+        }// end Default constructor
+
+
+    }// end TarotDeck sub-class
 }// end Namespace
