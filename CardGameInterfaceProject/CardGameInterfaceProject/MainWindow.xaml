@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:CardGameInterfaceProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid x:Name="lbxGames">
+        <ListBox x:Name="lbxPlayers" HorizontalAlignment="Left" Height="243" Margin="100,73,0,0" VerticalAlignment="Top" Width="207"/>
+        <ListBox HorizontalAlignment="Left" Height="243" Margin="487,73,0,0" VerticalAlignment="Top" Width="195"/>
+        <TextBlock x:Name="tblkPlayersT" HorizontalAlignment="Left" Margin="125,38,0,0" TextWrapping="Wrap" Text="Players" VerticalAlignment="Top" Height="24" Width="122" FontSize="16"/>
+        <TextBlock x:Name="tblkGamesT" HorizontalAlignment="Left" Margin="512,38,0,0" TextWrapping="Wrap" Text="Games" VerticalAlignment="Top" Height="24" Width="122" FontSize="16"/>
+        <Button x:Name="btnAddP" Content="Add" HorizontalAlignment="Left" Margin="100,336,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnPlayG" Content="Play" HorizontalAlignment="Left" Margin="487,336,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnDelP_Copy" Content="Delete" HorizontalAlignment="Left" Margin="232,336,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnRandomG" Content="Random" HorizontalAlignment="Left" Margin="607,336,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnScoreboard" Content="Scoreboard" HorizontalAlignment="Left" Margin="349,374,0,0" VerticalAlignment="Top" Width="100"/>
+
     </Grid>
 </Window>
