@@ -3,6 +3,7 @@
  ID: S00200536
  Year: 2
  Date: 17/02/21
+  GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Week%204/Ex6/Program.cs
 
  Description: Week 4, Exercise 6 - practicing LINQ
               - Displaying names to screen using LINQ query
