@@ -3,6 +3,7 @@
  ID: S00200536
  Year: 2
  Date: 17/02/21
+  GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Week%204/Ex2%20and%203/Program.cs
 
  Description: Week 4, Exercise 2 and 3 - practicing LINQ
               - Retrieves file information from C drive using basic
