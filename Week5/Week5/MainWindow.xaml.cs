@@ -20,9 +20,19 @@ namespace Week5
     /// </summary>
     public partial class MainWindow : Window
     {
+        // creating new database object from existing db file
+        NORTHWNDEntities db = new NORTHWNDEntities();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnQuery_Click(object sender, RoutedEventArgs e)
+        {
+            // Ex1 - Customer Names
+            var query = from c in db.Customers
+                        select c.CompanyName;
+
         }
     }
 }
