@@ -45,7 +45,7 @@ namespace Week6
         /*Method: Window_Loaded
                   1) Executes as soon as the window is loaded
                   2) Populates lbxStock
-                  3) Uses queries to populate both lbxSuppliers and lbxCountries */
+                  3) Uses queries to populate both lbxSuppliers, lbxCountries and lbxProducts */
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Populating lbxStock                     
@@ -71,6 +71,14 @@ namespace Week6
 
             // Populating lbxCountries with query2 distinct results
             lbxCountries.ItemsSource = query2.ToList().Distinct();
+
+            // Grabbing all Products from database
+            var query3 = from p in db.Products
+                         orderby p.ProductName
+                         select p.ProductName;
+
+            // Populating lbxProducts using query3
+            lbxProducts.ItemsSource = query3.ToList().Distinct();
         }// end Window_Loaded()
 
 
