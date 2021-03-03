@@ -7,7 +7,7 @@
 
  Description: Contains definitions for how our window opperates
                  i.e. When a ListBox object is selected, the other ListBox objects will get updated
- Properties: lbxStock, lbxSuppliers, lbxCountries
+ Properties: lbxStock, lbxSuppliers, lbxCountries, lbxProducts
  Methods: Window_Loaded, 
  ##################################################################################################################################################*/
 using System;
@@ -76,28 +76,82 @@ namespace Week6
 
 
         /*Method: lbxStock_SelectionChanged()
-                  1) */
+                  1) Executes when an item in lbxStock is selected
+                  2) Updates lbxProducts based on the switch criteria
+                      (i.e. Low = UnitsInStock < 50, Normal = UnitsInStock > 50 and < 100
+                            Overstocked = UnitsInStock > 100) */
         private void lbxStock_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // get stock level selected
+            var query = from p in db.Products
+                        where p.UnitsInStock < 50
+                        orderby p.ProductName
+                        select p.ProductName;
 
+            string selected = lbxStock.SelectedItem as string;
+
+            switch(selected)
+            {
+                case "Low":
+                    break;
+                case "Normal":
+                    query = from p in db.Products
+                            where (p.UnitsInStock >= 50) && (p.UnitsInStock <= 100)
+                            orderby p.ProductName
+                            select p.ProductName;
+                    break;
+                case "Overstocked":
+                    query = from p in db.Products
+                            where p.UnitsInStock > 100
+                            orderby p.ProductName
+                            select p.ProductName;
+                    break;
+            } // end switch block
+
+            // Updating lbxProducts
+            lbxProducts.ItemsSource = query.ToList();
         }// end lbxStock_SelectionChanged()
 
 
-
         /*Method: lbxSuppliers_SelectionChanged()
-                  1) */
+                  1) Executes when an item in lbxSuppliers is selected
+                  2) Retrieves and converts the Value Path of the item to an int value
+                  3) Queries the database for Products sold by Suppliers that match the int value
+                  4) Updates lbxProducts */
         private void lbxSuppliers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Using the 'Selected Value Path'
+            int supplierID = Convert.ToInt32(lbxSuppliers.SelectedValue);
 
+            // MessageBox.Show(supplierID.ToString());
+
+            var query = from p in db.Products
+                        where p.SupplierID == supplierID
+                        orderby p.ProductName
+                        select p.ProductName;
+
+            // Update lbxProducts
+            lbxProducts.ItemsSource = query.ToList();
         }// end lbxSuppliers_SelectionChanged()
 
 
 
         /*Method: lbxCountries_SelectionChanged()
-                  1) */
+                  1) Eecutes when an item in lbxCountry is selected
+                  2) Gets the string value of the selected item
+                  3) Queries the database for all matching Products that link to the Country field
+                  4) Updates lbxProducts with query results */
         private void lbxCountries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string country = (string)(lbxCountries.SelectedValue);
 
+            var query = from p in db.Products
+                        where p.Supplier.Country == country
+                        orderby p.ProductName
+                        select p.ProductName;
+
+            // Update lbxProducts
+            lbxProducts.ItemsSource = query.ToList();
         }// end lbxCountries_SelectionChanged()
     }// end MainWindow class
     /*SHARED ITEMS-------------------------------------------------------------------------------------------------------------------------------*/
