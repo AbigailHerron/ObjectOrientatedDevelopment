@@ -6,8 +6,8 @@
  GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Week6/Labsheet2/MainWindow.xaml.cs
 
  Description:
- Properties:
- Methods:
+ Properties: lbxCustomers, lbxOrderSum, dgOrderDet
+ Methods: Window_Loaded, lbxCustomers_SelectionChanged, lbxOrderSum_SelectionChanged
  ######################################################################################################################*/
 using System;
 using System.Collections.Generic;
@@ -31,24 +31,51 @@ namespace Labsheet2
     /// </summary>
     public partial class MainWindow : Window
     {
+        /*VARIABLES-------------------------------------------------------------------------------------------------------------------------------*/
+        AdventureLiteEntities db = new AdventureLiteEntities();
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /*Method: Window_Loaded
+                  1) Executes when window is loaded
+                  2) Populates lbxCustomers*/
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var query = from o in db.SalesOrderHeaders
+                        orderby o.Customer.CompanyName
+                        select o.Customer.CompanyName;
+
+            // Populating lbxCustomers
+            lbxCustomers.ItemsSource = query.ToList().Distinct();
+        }// end Window_Loaded()
+
+        /*Method: lbxCustomers_SelectionChanged
+                  1) Executes when an item in lbxCustomers is selected
+                  2) Retrieves the selected item's value as a string
+                  3) Queries the database SalesOrderHeaders for a match to the value
+                     as long as the value is not null 
+                  4) Updates lbxOrderSum */
         private void lbxCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string cust = lbxCustomers.SelectedItem as string;
 
-        }
+            if(cust != null)
+            {
+                var query = from o in db.SalesOrderHeaders
+                            where o.Customer.CompanyName.Equals(cust)
+                            select o;
+
+                //Updating lbxOrderSum
+                lbxOrderSum.ItemsSource = query.ToList();
+            }// end if block
+        }// end lbxCustomers_SelectionChanged()
 
         private void lbxOrderSum_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
+        }// end lbxOrderSum_SelectionChanged()
 
-        private void lbxOrderDet_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }// end MainWindow class
 }// end Namespace
