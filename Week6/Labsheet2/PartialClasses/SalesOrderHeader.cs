@@ -3,7 +3,7 @@
  ID: S00200536
  Year: 2
  Date: 03/03/21
- GitHub Link: 
+ GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Week6/Labsheet2/PartialClasses/SalesOrderHeader.cs
 
  Description: Partial Class to auto-generated SalesOrderHeader just to override the ToString method
  ###################################################################################################################################*/
