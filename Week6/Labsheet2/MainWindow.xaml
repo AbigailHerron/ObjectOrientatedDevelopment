@@ -26,6 +26,18 @@
             <RowDefinition/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
+        <!-- Lables in Grid.Row 1 -->
+        <Label Content="Customers" Grid.Row="0" Grid.Column="0" Margin="10" />
+        <Label Content="Order Summary" Grid.Row="0" Grid.Column="1" Margin="10" />
 
+        <!-- ListBoxes in Grid.Row 2 -->
+        <ListBox x:Name="lbxCustomers" Grid.Row="1" Grid.Column="0" Margin="10" SelectionChanged="lbxCustomers_SelectionChanged"/>
+        <ListBox x:Name="lbxOrderSum" Grid.Row="1" Grid.Column="1" Margin="10" SelectionChanged="lbxOrderSum_SelectionChanged"/>
+
+        <!-- Lable in Grid.Row 3 -->
+        <Label Content="Order Details" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="10" />
+
+        <!-- ListBox in Grid.Row 4 -->
+        <ListBox x:Name="lbxOrderDet" Grid.Row="3" Grid.ColumnSpan="2" Margin="10" SelectionChanged="lbxOrderDet_SelectionChanged"/>
     </Grid>
 </Window>
