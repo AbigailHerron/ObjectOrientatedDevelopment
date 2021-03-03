@@ -8,14 +8,127 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl TabStripPlacement="Top">
+            <!-- Tab 1 -->
             <TabItem Name="Ex1" Header="Ex1" Width="50">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="353*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="90*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnQueryEx1" Content="Exercise 1" Click="btnQueryEx1_Click" Grid.Column="2" Margin="267,7,356,7"/>
+                    <ListBox x:Name="lbxCustomersEx1" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 2 -->
+            <TabItem Name="Ex2" Header="Ex2" Width="50">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="14*"/>
+                        <ColumnDefinition Width="379*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="90*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnQueryEx2" Content="Exercise 2" Height="25" Width="75" Click="btnQueryEx2_Click" Grid.Column="1" Margin="328,7,356,7"/>
+                    <DataGrid x:Name="dgCustomersEx2" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 3 -->
+            <TabItem Name="Ex3" Header="Ex3" Width="50">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="10*"/>
                         <RowDefinition Height="90*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="btnQueryEx1" Content="Exercise 1" Height="25" Width="75" Click="btnQuery_Click"/>
-                    <ListBox x:Name="lbxCustomersEx1" Grid.Row="1" Grid.Column="0"/>
+                    <Button x:Name="btnQueryEx3" Content="Exercise 3" Height="25" Width="75" Click="btnQueryEx3_Click"/>
+                    <DataGrid x:Name="dgCustomersEx3" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 4 -->
+            <TabItem Name="Ex4" Header="Ex4" Width="50">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="90*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnQueryEx4" Content="Exercise 4" Height="25" Width="75" Click="btnQueryEx4_Click"/>
+                    <DataGrid x:Name="dgCustomersEx4" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Tab 5 -->
+            <TabItem Name="Ex5" Header="Ex5" Width="50">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="90*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnQueryEx5" Content="Exercise 5" Height="25" Width="75" Click="btnQueryEx5_Click"/>
+                    <DataGrid x:Name="dgCustomersEx5" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </TabItem>
+
+
+
+            <!-- Tab 6 -->
+            <TabItem Name="Ex6" Header="Ex6" Width="50">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="90*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnQueryEx6" Content="Exercise 6" Height="25" Width="75" Click="btnQueryEx6_Click"/>
+                    <DataGrid x:Name="dgCustomersEx6" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </TabItem>
+
+
+
+            <!-- Tab 7 -->
+            <TabItem Name="Ex7" Header="Ex7" Width="50">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="90*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnQueryEx7" Content="Exercise 7" Height="25" Width="75" Click="btnQueryEx7_Click"/>
+                    <DataGrid x:Name="dgCustomersEx7" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Tab 8 -->
+            <TabItem Name="Ex8" Header="Ex8" Width="50">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="90*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnQueryEx8" Content="Exercise 8" Height="25" Width="75" Click="btnQueryEx8_Click"/>
+                    <DataGrid x:Name="dgCustomersEx8" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Tab 9 -->
+            <TabItem Name="Ex9" Header="Ex9" Width="50">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="90*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnQueryEx9" Content="Exercise 9" Height="25" Width="75" Click="btnQueryEx9_Click"/>
+                    <DataGrid x:Name="dgCustomersEx9" Grid.Row="1" Grid.Column="0"/>
                 </Grid>
             </TabItem>
         </TabControl>
