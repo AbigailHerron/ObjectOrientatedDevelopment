@@ -32,7 +32,7 @@
 
         <!-- ListBoxes in Grid.Row 2 -->
         <ListBox x:Name="lbxCustomers" Grid.Row="1" Grid.Column="0" Margin="10" SelectionChanged="lbxCustomers_SelectionChanged"/>
-        <ListBox x:Name="lbxOrderSum" Grid.Row="1" Grid.Column="1" Margin="10" SelectionChanged="lbxOrderSum_SelectionChanged"/>
+        <ListBox x:Name="lbxOrderSum" Grid.Row="1" Grid.Column="1" Margin="10" SelectionChanged="lbxOrderSum_SelectionChanged" SelectedValuePath="SalesOrderID"/>
 
         <!-- Lable in Grid.Row 3 -->
         <Label Content="Order Details" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="354,10,354,0" Height="25" />
