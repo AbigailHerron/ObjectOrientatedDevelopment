@@ -58,7 +58,8 @@ namespace Labsheet2
                      as long as the value is not null 
                   4) Updates lbxOrderSum */
         private void lbxCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        {  /*Note: Partial Class for SalesOrderHeader was used to override ToString() method */
+            // Grabbing string value of selected item
             string cust = lbxCustomers.SelectedItem as string;
 
             if(cust != null)
@@ -72,9 +73,33 @@ namespace Labsheet2
             }// end if block
         }// end lbxCustomers_SelectionChanged()
 
+
+        /*Method: lbxOrderSum_SelectionChanged
+                  1) Executes when an item in lbxCOrderSum is selected
+                  2) Retrieve and converts the selected value to an int
+                  3) Queries the SalesOrderDetails table in the database for a match
+                  4) Updates dgOrderDet with query results */
         private void lbxOrderSum_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Grabbing the selected value and converting it to an int
+            int orderID = Convert.ToInt32(lbxOrderSum.SelectedValue);
 
+            if (orderID > 0)
+            {
+                var query = from od in db.SalesOrderDetails
+                            where od.SalesOrderID == orderID
+                            select new
+                            {
+                                ProductName = od.Product.Name,
+                                od.UnitPrice,
+                                od.UnitPriceDiscount,
+                                od.OrderQty,
+                                od.LineTotal
+                            };
+
+                // Updating dgOrderDet
+                dgOrderDet.ItemsSource = query.ToList();
+            }// end if block
         }// end lbxOrderSum_SelectionChanged()
 
     }// end MainWindow class
