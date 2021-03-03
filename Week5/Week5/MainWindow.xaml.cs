@@ -1,4 +1,13 @@
-﻿using System.Linq;
+﻿/*################################################################################################################################
+ Name: Abigail Herron
+ ID: S00200536
+ Year: 2
+ Date: 24/02/21 - 03/03/21
+
+ Description: Some example methods on how to use LINQ
+ ################################################################################################################################*/
+
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
