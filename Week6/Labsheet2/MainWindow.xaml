@@ -14,7 +14,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labsheet2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -38,6 +38,6 @@
         <Label Content="Order Details" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="354,10,354,0" Height="25" />
 
         <!-- ListBox in Grid.Row 4 -->
-        <ListBox x:Name="lbxOrderDet" Grid.Row="3" Grid.ColumnSpan="2" Margin="10" SelectionChanged="lbxOrderDet_SelectionChanged"/>
+        <DataGrid x:Name="dgOrderDet" Grid.Row="3" Grid.ColumnSpan="2" Margin="10"/>
     </Grid>
 </Window>
