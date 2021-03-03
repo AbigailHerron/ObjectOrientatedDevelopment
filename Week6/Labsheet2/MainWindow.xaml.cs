@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*######################################################################################################################
+ Name: Abigail Herron
+ ID: S00200536
+ Year: 2
+ Date: 03/03/21
+ GitHub Link:
+
+ Description:
+ Properties:
+ Methods:
+ ######################################################################################################################*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +35,20 @@ namespace Labsheet2
         {
             InitializeComponent();
         }
-    }
-}
+
+        private void lbxCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void lbxOrderSum_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void lbxOrderDet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+    }// end MainWindow class
+}// end Namespace
