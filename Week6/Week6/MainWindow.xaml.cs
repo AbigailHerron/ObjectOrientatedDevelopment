@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*##################################################################################################################################################
+ Name: Abigail Herron
+ ID: S00200536
+ Year: 2
+ Date: 03/03/21
+ GitHub Link: 
+
+ Description: Contains definitions for how our window opperates
+                 i.e. When a ListBox object is selected, the other ListBox objects will get updated
+ Properties:
+ Methods:
+ ##################################################################################################################################################*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +35,11 @@ namespace Week6
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
