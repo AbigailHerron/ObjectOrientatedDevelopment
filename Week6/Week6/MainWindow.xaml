@@ -3,7 +3,7 @@
     ID: S00200536
     Year: 2
     Date: 03/03/21
-    GitHub Link:
+    GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/Week6/Week6/MainWindow.xaml
     
     Description:  Contains window object definitions
  ########################################################################################################################################-->
@@ -17,17 +17,31 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="53"/>
-            <RowDefinition Height="157"/>
-            <RowDefinition Height="52"/>
-            <RowDefinition Height="157"/>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="198"/>
-            <ColumnDefinition Width="396"/>
-            <ColumnDefinition Width="198"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <!-- Lables in 1st Grid Row -->
+        <Label Content="Stock Level" Grid.Row="0" Grid.Column="0" Margin="10"/>
+        <Label Content="Suppliers" Grid.Row="0" Grid.Column="1" Margin="10"/>
+        <Label Content="Country" Grid.Row="0" Grid.Column="2" Margin="10"/>
+
+        <!-- All list boxes in the 2nd Grid Row  -->
+        <ListBox x:Name="lbxStock" SelectionChanged="lbxStock_SelectionChanged" Grid.Row="1" Margin="10"/>
+        <ListBox x:Name="lbxSuppliers" DisplayMemberPath="SupplierName" SelectedValuePath="SupplierID" SelectionChanged="lbxSuppliers_SelectionChanged" Grid.Column="1" Grid.Row="1" Margin="10"/>
+        <ListBox x:Name="lbxCountries" SelectionChanged="lbxCountries_SelectionChanged" Grid.Column="2" Grid.Row="1" Margin="10"/>
+
+        <!-- Lables in 3rd Grid Row -->
+        <Label Content="Products" Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" Margin="10"/>
+
+        <!-- The ListBox in the 4th Grid Row  -->
+        <ListBox x:Name="lbxProducts" Grid.Column="1" Grid.Row="3" Margin="10"/>
 
     </Grid>
 </Window>
