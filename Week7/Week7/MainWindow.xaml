@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Week7"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <DataTemplate x:Key="lbxBandTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Path=BandImage}" Height="100" Width="100"/>
+                <TextBlock Text="{Binding Path=Name}" FontSize="15" Margin="10"/>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="lbxAlbumTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Path=AlbumImage}" Height="100" Width="100"/>
+                <TextBlock Text="{Binding Path=Name}" FontSize="15" Margin="10"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
     <Grid>
-        
+        <ListBox x:Name="lbxBands" ItemTemplate="{StaticResource lbxBandTemplate}" HorizontalAlignment="Left" Height="287" Margin="40,81,0,0" VerticalAlignment="Top" Width="362" SelectionChanged="lbxBands_SelectionChanged"/>
+        <ListBox x:Name="lbxAlbums" ItemTemplate="{StaticResource lbxAlbumTemplate}" HorizontalAlignment="Left" Height="287" Margin="464,81,0,0" VerticalAlignment="Top" Width="292"/>
+
     </Grid>
 </Window>
