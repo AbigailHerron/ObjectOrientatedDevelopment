@@ -20,9 +20,37 @@ namespace Week7
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        // Creating Database Object
+        Model1Container db = new Model1Container();
+
         public MainWindow()
         {
             InitializeComponent();
         }
-    }
-}
+
+        
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var query = from b in db.Bands
+                        select b;
+
+            lbxBands.ItemsSource = query.ToList();
+        }// end Window_Loaded()
+
+        private void lbxBands_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Band selectedBand = lbxBands.SelectedItem as Band;
+
+            if(selectedBand != null)
+            {
+                var query = from a in db.Albums
+                            where a.BandId == selectedBand.Id
+                            select a;
+
+                lbxAlbums.ItemsSource = query.ToList();
+            }
+        }// end lbxBands_SelectionChanged()
+    }// end MainWindow Class
+}// end Namespace
