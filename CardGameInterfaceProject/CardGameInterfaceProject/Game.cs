@@ -40,7 +40,7 @@ using System.Threading.Tasks;
 
 namespace CardGameInterfaceProject
 {
-    class Game
+    public abstract class Game
     {
     }// end Game abstract class
 }// end Namespace
