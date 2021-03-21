@@ -3,7 +3,7 @@
  ID: S00200536
  Year: 2
  Date: 21/03/21
- GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/CardGameInterfaceProject/CardGameInterfaceProject/Deck.cs
+ GitHub Link: https://github.com/AbigailHerron/ObjectOrientatedDevelopment/blob/main/CardGameInterfaceProject/CardGameInterfaceProject/Game.cs
  
  Description: An abstract class (Game) and all related Sub-Classes (GoFish, Match, TexasHoldEm, Fortune) as follows:
  --------------------------------------------------------------------
