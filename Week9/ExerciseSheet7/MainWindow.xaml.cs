@@ -24,5 +24,11 @@ namespace ExerciseSheet7
         {
             InitializeComponent();
         }
+
+        // Q1
+        private void Ex1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }// end Q1
     }
 }
