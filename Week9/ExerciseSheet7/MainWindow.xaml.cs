@@ -42,5 +42,69 @@ namespace ExerciseSheet7
         {
 
         }// end Q1
-    }
-}
+
+
+
+        // Q2
+        private void Ex2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }// end Q2
+
+
+
+        // Q3
+        private void Ex3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }// end Q3
+
+
+
+        // Q4
+        private void Ex4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }// end Q4
+
+
+
+        // Q5
+        private void Ex5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }// end Q5
+
+
+
+        // Q6
+        private void Ex6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }// end Q6
+
+
+
+        // Q7
+        private void Ex7_Click(object sender, RoutedEventArgs e)
+        {
+
+        }// end Q7
+
+
+
+        // Q8
+        private void Ex8_Click(object sender, RoutedEventArgs e)
+        {
+
+        }// end Q8
+
+
+
+        // Q9
+        private void Ex9_Click(object sender, RoutedEventArgs e)
+        {
+
+        }// end Q9
+    }// end MainWindow class
+}// end Namespace
