@@ -1,12 +1,153 @@
-﻿<Window x:Class="ExerciseSheet7.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ExerciseSheet7"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+﻿<!--#################################################################################################################################################
+ Name: Abigail Herron
+ ID: S00200536
+ Date: 24/03/21
+ GitHub Link: 
+ 
+ Description: Contains the window's tab definitions for Exercise Sheet 7 questions
+#################################################################################################################################################-->
+<Window x:Class="ExerciseSheet7.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:ExerciseSheet7"
+    mc:Ignorable="d"
+    Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <!-- Start Question Section -->
+        <TabControl TabStripPlacement="Top">
+            <!-- Q1 -->
+            <TabItem Header="Q1" Width="35">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="80*"/>
+                        <RowDefinition Height="20*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="60*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Name="btnQ1" Content="Button" Grid.Row="0" Grid.ColumnSpan="3" Width="100" Height="30" Margin="10" Click="Ex1_Click"/>
+                    <DataGrid Name="dgQ1" Grid.Row="1" Grid.Column="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Q2 -->
+            <TabItem Header="Q2" Width="35">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="btnQ2" Content="Button" Grid.Row="0" Width="100" Height="30" Margin="10" Click="Ex2_Click"/>
+                    <DataGrid Name="dgQ2" Grid.Row="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Q3 -->
+            <TabItem Header="Q3" Width="35">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="btnQ3" Content="Button" Grid.Row="0" Width="100" Height="30" Margin="10" Click="Ex3_Click"/>
+                    <DataGrid Name="dgQ3" Grid.Row="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Q4 -->
+            <TabItem Header="Q4" Width="35">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="btnQ4" Content="Button" Grid.Row="0" Width="100" Height="30" Margin="10" Click="Ex4_Click"/>
+                    <DataGrid Name="dgQ4" Grid.Row="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Q5 -->
+            <TabItem Header="Q5" Width="35">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="btnQ5" Content="Button" Grid.Row="0" Width="100" Height="30" Margin="10" Click="Ex5_Click"/>
+                    <TextBlock Name="tblkQ5" Grid.Row="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Q6 -->
+            <TabItem Header="Q6" Width="35">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="btnQ6" Content="Button" Grid.Row="0" Width="100" Height="30" Margin="10" Click="Ex6_Click"/>
+                    <DataGrid Name="dgQ6" Grid.Row="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Q7 -->
+            <TabItem Header="Q7" Width="35">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="btnQ7" Content="Button" Grid.Row="0" Width="100" Height="30" Margin="10" Click="Ex7_Click"/>
+                    <DataGrid Name="dgQ7" Grid.Row="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Q8 -->
+            <TabItem Header="Q8" Width="35">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="btnQ8" Content="Button" Grid.Row="0" Width="100" Height="30" Margin="10" Click="Ex8_Click"/>
+                    <DataGrid Name="dgQ8" Grid.Row="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Q9 -->
+            <TabItem Header="Q9" Width="35">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="btnQ9" Content="Button" Grid.Row="0" Width="100" Height="30" Margin="10" Click="Ex9_Click"/>
+                    <DataGrid Name="dgQ9" Grid.Row="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <!-- End Question Section -->
     </Grid>
 </Window>
