@@ -30,6 +30,8 @@ namespace ExerciseSheet7
     /// </summary>
     public partial class MainWindow : Window
     {
+        // importing database entities as one object
+        NORTHWNDEntities1 db = new NORTHWNDEntities1();
         public MainWindow()
         {
             InitializeComponent();
