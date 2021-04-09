@@ -23,6 +23,7 @@ namespace CardGameInterfaceProject
         /*PROPERTIES ------------------------------------------------------------------------------------------------------*/
         public string PlayerName { get; set; }
         public List<Stats> Scores {get; set;}
+        public List<Card> Hand { get; set; }
 
         /*CONSTRUCTORS ----------------------------------------------------------------------------------------------------*/
         /*Constructor: Default
@@ -37,7 +38,8 @@ namespace CardGameInterfaceProject
         public Player(string name)
         {
             this.PlayerName = name;
-                this.Scores = new List<Stats>();
+            this.Scores = new List<Stats>();
+            this.Hand = new List<Card>();
         }// end All constructor
 
         /*METHODS ---------------------------------------------------------------------------------------------------------*/
