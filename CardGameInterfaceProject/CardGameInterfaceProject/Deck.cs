@@ -164,8 +164,13 @@ namespace CardGameInterfaceProject
             {
                 if (flip.Next(1) != 0) // flip can either be 0 or 1
                 {
-                    c.Position = false; // make the card upside-down, essentially
-                    c.Point = c.Point - (2 * c.Point);
+                    // using if/else here in case the deck is shuffled more than once
+                    if(c.Position == true)
+                        c.Position = false;
+                    else
+                    c.Position = true; // make the card upside-down, essentially
+
+                    c.Point = c.Point * (-1); // reverse the point value of the card when flipped
                 }
             }// end loop
         }// end Shuffle()
